@@ -620,7 +620,7 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 25% 100%;
+  object-position: 15% 100%;
 }
 
 @media (min-width: 768px) {
