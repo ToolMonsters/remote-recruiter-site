@@ -1190,6 +1190,7 @@ body {
     flex: 0 0 50%;
     max-width: 50%;
     overflow: hidden;
+    order: unset;
   }
 
   .product-detail-img img {
