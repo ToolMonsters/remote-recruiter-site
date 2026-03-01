@@ -611,7 +611,7 @@ body {
 .p5-section {
   width: 100%;
   position: relative;
-  height: 80vh;
+  height: 60vh;
   overflow: hidden;
 }
 
@@ -620,7 +620,7 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: left bottom;
+  object-position: 25% 100%;
 }
 
 @media (min-width: 768px) {
@@ -1011,14 +1011,15 @@ body {
 }
 
 .bundle-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin-bottom: 20px;
 }
 
 .bundle-images img {
-  width: 100%;
+  width: calc(33.333% - 6px);
   height: auto;
   display: block;
 }
@@ -1072,8 +1073,11 @@ body {
   }
 
   .bundle-images {
-    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
+  }
+
+  .bundle-images img {
+    width: calc(20% - 10px);
   }
 
   .bundle-title-bar h2 {
@@ -1101,6 +1105,10 @@ body {
 .product-detail-inner {
   display: flex;
   flex-direction: column;
+}
+
+.product-detail-img {
+  order: -1;
 }
 
 .product-detail-img img {
@@ -1727,15 +1735,28 @@ body {
 
 .connect-bg {
   width: 100%;
-  display: block;
+  display: none;
 }
 
 .contact-connect-text {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 30px 5%;
   text-align: left;
+  background: #F8F7F1;
+}
+
+@media (min-width: 768px) {
+  .connect-bg {
+    display: block;
+  }
+
+  .contact-connect-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    background: transparent;
+  }
 }
 
 .contact-connect-text p {
