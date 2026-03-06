@@ -359,6 +359,16 @@ body {
   color: #2a2a2a;
 }
 
+.mobile-line {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobile-line {
+    display: inline;
+  }
+}
+
 .btn-hero {
   display: inline-block;
   padding: 14px 32px;
@@ -474,6 +484,10 @@ body {
   object-position: center center;
 }
 
+.breakfree-desktop {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .breakfree {
     height: auto;
@@ -483,6 +497,14 @@ body {
   .breakfree-img {
     height: auto;
     object-fit: fill;
+  }
+
+  .breakfree-desktop {
+    display: block;
+  }
+
+  .breakfree-mobile {
+    display: none;
   }
 }
 
@@ -650,12 +672,16 @@ body {
 }
 
 .quiz-images {
-  display: none;
+  display: block;
 }
 
 .quiz-img {
   width: 100%;
   display: block;
+}
+
+.quiz-text {
+  text-align: center;
 }
 
 .quiz-text h2 {
@@ -735,6 +761,7 @@ body {
 
   .quiz-text {
     flex: 1;
+    text-align: left;
   }
 }
 
@@ -1453,6 +1480,17 @@ body {
   }
 }
 
+/* ── Full Image Section ── */
+.full-img-section {
+  width: 100%;
+  line-height: 0;
+}
+
+.full-img {
+  width: 100%;
+  display: block;
+}
+
 /* ── Meet the Founder ── */
 .founder {
   background: #000;
@@ -1496,7 +1534,7 @@ body {
   color: #e0e0e0;
   line-height: 1.7;
   margin-bottom: 24px;
-  text-align: justify;
+  text-align: left;
 }
 
 .founder-text p strong {
