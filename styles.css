@@ -672,12 +672,18 @@ body {
 }
 
 .quiz-images {
-  display: block;
+  display: none;
 }
 
 .quiz-img {
   width: 100%;
   display: block;
+}
+
+.quiz-img-mobile {
+  width: 100%;
+  display: block;
+  margin-top: 24px;
 }
 
 .quiz-text {
@@ -757,6 +763,10 @@ body {
   .quiz-images {
     display: block;
     flex: 1;
+  }
+
+  .quiz-img-mobile {
+    display: none;
   }
 
   .quiz-text {
