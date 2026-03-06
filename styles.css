@@ -1326,6 +1326,11 @@ body {
   counter-increment: step;
 }
 
+.how-it-works-content ol li a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .how-it-works-content ol li::before {
   content: counter(step) ".";
   font-weight: 700;
