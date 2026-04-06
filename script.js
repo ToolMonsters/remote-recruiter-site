@@ -161,10 +161,35 @@ heroSlider.addEventListener('touchend', (e) => {
 // Contact form submission
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const title = document.querySelector('.contact-title');
-    title.textContent = 'Thanks!';
-    contactForm.innerHTML = '<div class="contact-thanks"><p>Bold move. We like it!</p><p>Your message landed safely in our inbox — no ghosting here, promise.</p><p>Expect to hear from us very soon!</p></div>';
+    const submitBtn = contactForm.querySelector('.btn-submit');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    const data = {
+      first_name: contactForm.querySelector('[name="first_name"]').value,
+      last_name: contactForm.querySelector('[name="last_name"]').value,
+      email: contactForm.querySelector('[name="email"]').value,
+      subject: contactForm.querySelector('[name="subject"]').value
+    };
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) throw new Error('Failed');
+
+      title.textContent = 'Thanks!';
+      contactForm.innerHTML = '<div class="contact-thanks"><p>Bold move. We like it!</p><p>Your message landed safely in our inbox — no ghosting here, promise.</p><p>Expect to hear from us very soon!</p></div>';
+    } catch (err) {
+      submitBtn.textContent = 'Submit Now';
+      submitBtn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    }
   });
 }
