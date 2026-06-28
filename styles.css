@@ -947,6 +947,8 @@ body {
 .btn-product {
   display: inline-block;
   padding: 14px 40px;
+  min-width: 230px;
+  text-align: center;
   background: #1a1a1a;
   color: #fff;
   text-decoration: none;
