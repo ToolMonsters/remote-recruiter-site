@@ -1026,14 +1026,20 @@ body {
 }
 
 .bundle-desc {
-  max-width: var(--max-width);
+  width: fit-content;
+  max-width: 100%;
   margin: 0 auto 32px;
   font-family: 'Archivo Expanded', sans-serif;
-  font-weight: 700;
-  font-size: clamp(0.9rem, 2vw, 1.6rem);
+  font-weight: 400;
+  font-size: clamp(1.05rem, 2.4vw, 1.95rem);
+  -webkit-text-stroke: 0.35px currentColor;
   color: #1a1a1a;
-  line-height: 1.6;
-  text-align: center;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.bundle-desc strong {
+  font-weight: 700;
 }
 
 .bundle-light {
@@ -1051,9 +1057,10 @@ body {
 
 .bundle-box h3 {
   font-family: 'Archivo Expanded', sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   color: #1a1a1a;
+  line-height: 1.4;
   margin-bottom: 24px;
 }
 
